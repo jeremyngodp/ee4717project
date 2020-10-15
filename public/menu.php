@@ -6,6 +6,10 @@
         $_SESSION['cart'] = array();
     }
     
+    if(!isset($_SESSION['item-id'])) {
+        $_SESSION['item-id'] = array();
+    }
+
     echo "cart length " . count($_SESSION['cart']) . "<br/>";
     
 
@@ -13,6 +17,7 @@
         
         $item = $_GET['item'];
         $quantity = $_GET['quantity'];
+        $name = $_GET['itemName'];
         echo "item " . $item;
         echo " quantity ". $quantity;
         echo "<br/>";
@@ -23,6 +28,7 @@
 
         else {
             $_SESSION['cart'] += [$item => $quantity ];
+            $_SESSION['item-id'] +=[$item => $name];
         }
         
     }
@@ -53,6 +59,7 @@
                 echo '<form method="get" action=' . $_SERVER["PHP_SELF"].'>';
                 echo 'Quantity: <input value="0" name="quantity" type="text"> <br/>';
                 echo '<input value=' . $item["id"] . ' name="item" type="hidden"> <br/>';
+                echo '<input value=' . $item["dish_name"] . ' name="itemName" type="hidden"> <br/>';
                 echo '<input value="Add to Cart"  type="submit">';
                 echo '</form>';
                 echo '</ul>';
@@ -64,8 +71,8 @@
     </div>
 
     <div>
-        <a href="placeorder.php">
-            <button>Place Order</button>
+        <a href="cart.php">
+            <button>View Cart</button>
         </a>
     </div>
 

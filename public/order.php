@@ -16,10 +16,7 @@
                 <th>Status</th>
                 <th>Amount</th>
             </tr>
-            <?php for ($i = 0; $i < $order_history->num_rows; $i++) {
-                $order = $order_history->fetch_assoc();
-
-            }?>
+            <!-- You can add dummy data to populate the table here --> 
         <table>
     </div>
 

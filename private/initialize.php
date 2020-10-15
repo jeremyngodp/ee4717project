@@ -11,7 +11,7 @@ define("SHARED_PATH", PRIVATE_PATH . "/shared");
 
 require_once("database.php");
 require_once("queryfunction.php");
-require_once("function.php");
+require_once("functions.php");
 
 @$db = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $errors = [];
