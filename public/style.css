@@ -1,0 +1,158 @@
+body {
+    font-family:Verdana, Arial, sans-serif;
+    background-color: #EED7C5;
+    }
+
+.wrapper{
+    width: 80%;
+    margin: auto;
+    min-width: 1200px;
+    } /*fixed page*/
+
+/*header styling*/
+
+header {
+    height: 230px;
+    background-color: #B36A5E; 
+    }
+
+.logo{
+    padding: 0px 30px;
+    width: 230px;
+    height: 230px;
+    } /*photo logo of home*/
+
+ .side a {
+        color: black;
+        text-decoration: none;
+        padding: 0px 10px;
+        display: inline-block;
+        } /*side bar links*/
+
+.side {
+        float:right;
+        padding: 100px 10px 20px 10px;
+     } /*side bar push to right*/
+
+.icons {
+        height: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+            } /*side bar icons*/
+
+.side input[type=text] {
+        border: none;
+        font-size: 15px;
+        height: 20px;
+        margin: 10px;
+            } /*search bar*/
+
+.container{
+        margin:  auto; /* Center the header div horizontally */
+    }
+
+/*cart styling*/
+
+#carttable{
+    border: 0px;
+    border-collapse: collapse;
+
+
+}
+
+#carttable th:nth-child(odd) { 
+    background-color: #EED7C5;
+    padding: 15px;
+    text-align: center;
+}
+
+#carttable th:nth-child(even){
+    padding: 15px;
+    text-align: center;
+    background-color: #EED7C5;
+}
+
+#carttable td {
+    padding: 15px;
+    text-align: center;
+    background-color: #EEE2DF;
+    }
+
+.placeorder {
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+}
+
+
+
+
+
+/*content index page*/
+
+.box1 {
+       background-color: #C89F9C;
+    } /*first container*/
+
+.box1content {
+        padding: 10px 30px;
+    } /*intro content*/
+
+#floatright { margin: 10px 30px;
+             float: right;
+     } /*picture in intro */
+
+.box2 {
+      background-color: #EEE2DF;
+} /*second container*/
+
+.box2content {
+       padding: 10px 30px;
+        } /*content in second box*/
+
+/*contact form page*/
+
+#contactform label {
+        float: left;
+        clear: left;
+        display: block;
+        width: 120px;
+        text-align: left;
+        padding-right:30px;
+       } /*name, email, etc*/
+
+#contactform input[type="text"], textarea {
+        display:block;
+        width: 300px;
+        } /*text boxes*/
+
+#contactform input[type="checkbox"]{
+        transform: scale(1.5);
+        } /*terms and conditions checkbox*/
+
+#contactform input[type="submit"]{
+         display:block;
+          width: 100px;
+          height: 30px;
+          background-color: #EEE2DF;
+        } /*submit form button*/
+
+#contactform span{
+          margin: 20px;
+        } /*terms and conditions */
+
+
+/*footer styling*/
+
+footer {
+    font-family:Verdana, Arial, sans-serif;
+    background-color: #B36A5E;
+    color: #EEE2DF;
+    height: 30px;
+    }
+
+.footertext{
+    text-align: center;
+    padding: 5px;
+    }

@@ -41,9 +41,21 @@
     
 ?>
 
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Yum Yum Bakery!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    
+
+    <div class="wrapper">
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>
-<div>
+
     <h1>Look Through our Menu</h1>
     <div>
         <?php while($category = $category_list->fetch_assoc()) {
@@ -76,7 +88,12 @@
         </a>
     </div>
 
-</div>
+
 
 <?php include(SHARED_PATH . "/public_footer.php"); ?>
+</div>
+</html>
+
+
+
 

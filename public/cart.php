@@ -13,11 +13,24 @@ else {
 
 ?>
 
-<?php include( SHARED_PATH . "/public_header.php"); ?>
-    <h1>Your Cart</h1>
 
-    <div>
-        <table>
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Yum Yum Bakery!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    
+
+    <div class="wrapper">
+            <?php include( SHARED_PATH . "/public_header.php"); ?>
+        <div class="box1">
+            <div class="box1content">
+        <h1>Your Cart</h1>
+        <table id= "carttable">
             <tr>
                 <th>Item</th>
                 <th>Item Name</th>
@@ -26,13 +39,27 @@ else {
                 <th>Total</th>
             </tr>
 
+            <tr>
+                <td>cake</td>
+                <td>vanila cake</td>
+                <td>$5</td>
+                <td>1</td>
+                <td>$5</td>
+            </tr>
+
+
+
             <!-- Add Dummy Data first -->
             
-        </table>
-    </div>
-    <div>
+        </table> <br>
+    
         <a href="#">
-            <button>Place Order</button>
+            <button class="placeorder">Place Order</button>
         </a>
-    </div>
+    
+</div> <!-- box1content -->
+</div> <!-- box1 -->
 <?php include(SHARED_PATH . "/public_footer.php"); ?>
+</div> <!-- wrapper -->
+</html>
+
