@@ -21,20 +21,10 @@ else {
 // }
 ?>
 
-
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <title>Yum Yum Bakery!</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-    </head>
-
     
-
+<?php include( SHARED_PATH . "/public_header.php"); ?>
     <div class="wrapper">
-            <?php include( SHARED_PATH . "/public_header.php"); ?>
+            
         <div class="box1">
             <div class="box1content">
         <h1>Your Cart</h1>
@@ -71,7 +61,8 @@ else {
     
 </div> <!-- box1content -->
 </div> <!-- box1 -->
-<?php include(SHARED_PATH . "/public_footer.php"); ?>
 </div> <!-- wrapper -->
-</html>
+<?php include(SHARED_PATH . "/public_footer.php"); ?>
+
+
 
