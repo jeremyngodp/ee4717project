@@ -8,9 +8,17 @@ if (!isset($_SESSION['cart'])) {
 
 else {
    $cart = $_SESSION['cart'];
-   $itemNameList =  $_SESSION['item-id'];
+   $itemNameList =  $_SESSION['item-name'];
+   $itemPriceList = $_SESSION['item-price'];
 }
 
+// foreach($itemNameList as $key => $value){
+//     echo $key . " => " . $value . " => " . $cart[$key] . "<br/>";
+// }
+
+// foreach($cart as $id => $quantity){
+//     echo $quantity * $itemPriceList[$id] .' <br/>';
+// }
 ?>
 
 
@@ -38,14 +46,18 @@ else {
                 <th>Qty</th>
                 <th>Total</th>
             </tr>
-
+            <?php foreach($itemNameList as $key => $value ) { ?>
             <tr>
-                <td>cake</td>
-                <td>vanila cake</td>
-                <td>$5</td>
-                <td>1</td>
-                <td>$5</td>
+                <td><?php echo $key; ?></td>
+                <td><?php echo $value; ?></td>
+                <td>$ <?php echo $itemPriceList[$key]; ?></td>
+                <td><?php echo $cart[$key];?></td>
+                <td>$ <?php echo  $cart[$key] * $itemPriceList[$key] ;?></td>
             </tr>
+
+            <?php }?>
+
+
 
 
 

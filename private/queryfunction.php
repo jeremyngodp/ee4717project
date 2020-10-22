@@ -30,17 +30,25 @@
         return $result;
     }
 
-    function addOrder($cart, $email) {
-        $sql = "INSERT INTO order ( email, created_date) VALUE (" . $email .", curdate() );";
-        $result = $db->query($sql);
+    function addToOrder($customer_id) {
+        global $db;
 
-        $sql_2 = "SELECT id FROM order ORDER BY id DESC LIMIT 1";
-        $order_id =$db->query($sql_2);
-        $sql_3 = "INSERT INTO orderitem (order_id, item_id, quantity) VALUES ";
-        foreach ($cart as $key => $value) {
-            $sql_3 += "(". $order_id . "," . $key . "," . $value . "), " ; //figure a way to add semicolon at end.
+        $sql ="INSERT INTO order (customer_id) VALUE (" . $customer_id . ");";
+        if($db->query($sql) === false){
+            echo "fail to add order";
         }
-         
+
+        return $db->insert_id;
+    }
+
+    function addToOrderItem($order_id, $cart) {
+        global $db;
+
+        foreach($cart as $key=> $value){
+            $sql = "INSERT INTO orderitem (order_id, item_id, quantity ) VALUE (" . $order_id ."," . $key ."," . $value." );";
+            $db->query($sql);
+        }
+
     }
 
     // function findAlItemByOrder($id) {
