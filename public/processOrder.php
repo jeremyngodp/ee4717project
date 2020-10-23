@@ -12,10 +12,15 @@
 
     else{
         $cart = $_SESSION['cart'];
-        $order_id = addToOrder(1);
+        $itemPrice = $_SESSION['item-price'];
+        $total_amount = 0;
+        
+        foreach ($cart as $id => $quantity){
+            $total_amount += $quantity * $itemPrice[$id];
+        }
+
+        $order_id = addToOrder(1, $total_amount); //Will extract user_id from session place here
         addToOrderItem($order_id, $cart);
         redirect_to('order.php');
     }
-    
-
 ?>
