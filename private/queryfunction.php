@@ -1,4 +1,27 @@
 <?php
+    function addUser($email, $hashed_password, $fullname, $contact, $role) {
+        global $db;
+
+        $sql = 'INSERT INTO f34ee.user (email, h_password, fullname, contact, user_role ) VALUE ("' . $email . '","' 
+                                                                                                    . $hashed_password . '","'
+                                                                                                    . $fullname . '",'
+                                                                                                    . $contact . ','
+                                                                                                    . $role . ');' ;
+        
+        $db->query($sql);
+        return $db->insert_id;
+    }
+
+    function findUserByEmail($email){
+        $sql = 'SELECT id, hashed_password, user_role FROM f34ee.user WHERE email = "' . $email . ";" ;
+        $result = $db->query($sql);
+        if(!$result) {
+            echo "User doesn't exist!";
+        }
+
+        return $result;
+    }
+
     function findDishByCategory($cat_id) {
         global $db;
 
