@@ -20,7 +20,13 @@
                     <a href="cart.php"> <img src="media/cart.png" alt="Cart" class="icons"><br> Cart</a> <!-- https://www.flaticon.com/free-icon/shopping-cart_1051037?term=cart&page=1&position=15 -->
                     <a href="order.php"> <img src="media/cookies.png" alt="Order" class="icons"><br> Order</a> <!-- https://www.flaticon.com/free-icon/cookies_3637351?term=bakery&page=1&position=4 -->
                     <a href="contact.php"> <img src="media/call.png" alt="Contact" class="icons"><br> Contact</a> <!-- https://www.flaticon.com/free-icon/phone-call_785869?term=call&page=1&position=22 -->
-                        
+                    <?php if(!isset($_SESSION['user'])){
+                            echo '<a href="login.php">Log In</a>';
+                        }
+                          else {
+                            echo '<a href="logout.php">Log Out</a>';
+                          }
+                    ?>    
 
                     <input type="text" placeholder="Search..."> <!-- TODO: Insert search box -->
                   

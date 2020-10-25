@@ -6,6 +6,10 @@
     // for every item in cart, add to orderitem (need order id and item and quantity)
     session_start();
 
+    if (!isset($_SESSION['user'])) {
+        redirect_to('login.php');
+    }
+
     if (!isset($_SESSION['cart'])) {
         redirect_to('menu.php');
     }
@@ -20,6 +24,10 @@
 
         $order_id = addToOrder(1, $total_amount); //Will extract user_id from session place here
         addToOrderItem($order_id, $cart);
+
+        unset($_SESSION['cart']);
         redirect_to('order.php');
     }
+
+    $db->close();
 ?>
