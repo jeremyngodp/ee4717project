@@ -24,17 +24,17 @@
     function findAllOrderByUser($id) {
         global $db;
 
-        $sql= "SELECT * FROM f34ee.order WHERE user_id = " . $id . ";" ;
+        $sql= "SELECT * FROM f34ee.order WHERE customer_id = " . $id . ";" ;
         // $result = $sql;
         $result = $db->query($sql);
         confirm_result_set($result);
         return $result;
     }
 
-    function addToOrder($customer_id) {
+    function addToOrder($customer_id, $amount) {
         global $db;
 
-        $sql ="INSERT INTO f34ee.order (customer_id) VALUE (" . $customer_id . ");";
+        $sql ="INSERT INTO f34ee.order (customer_id, amount) VALUE (" . $customer_id .",". $amount . ");";
         if($db->query($sql) === false){
             echo "fail to add order";
         }
@@ -45,16 +45,10 @@
     function addToOrderItem($order_id, $cart) {
         global $db;
 
-        foreach($cart as $key=> $value){
-            $sql = "INSERT INTO f34ee.orderitem (order_id, item_id, quantity ) VALUE (" . $order_id ."," . $key ."," . $value." );";
-            $db->query($sql);
+        foreach($cart as $key => $value){
+            $sql = "INSERT INTO f34ee.oderitem (order_id, item_id, quantity ) VALUE (" . $order_id ."," . $key ."," . $value." );";
+            $result = $db->query($sql);
         }
 
     }
-
-    // function findAlItemByOrder($id) {
-    //     global $db;
-
-    //     $sql = "SELECT item.id  FROM "
-    // }
 ?>

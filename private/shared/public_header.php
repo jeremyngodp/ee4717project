@@ -23,10 +23,9 @@
                 <a href="contact.php"> <img src="media/call.png" alt="Contact" class="icons"><br> Contact</a> <!-- https://www.flaticon.com/free-icon/phone-call_785869?term=call&page=1&position=22 -->
                     
 
-            <input type="text" placeholder="Search..."> <!-- TODO: Insert search box -->
-                  
-            </nav>
-        </div>
-    </header>
-    </div>
-</body>
+                <input type="text" placeholder="Search..."> <!-- TODO: Insert search box -->
+                    
+                </nav>
+            </div>
+        </header>
+    

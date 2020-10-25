@@ -2,15 +2,12 @@
 require_once("../private/initialize.php"); 
 session_start();
 
-if (!isset($_SESSION['cart'])) {
-    redirect_to('menu.php');
+if (isset($_SESSION['cart'])) {
+    $cart = $_SESSION['cart'];
+    $itemNameList =  $_SESSION['item-name'];
+    $itemPriceList = $_SESSION['item-price'];
 }
 
-else {
-   $cart = $_SESSION['cart'];
-   $itemNameList =  $_SESSION['item-name'];
-   $itemPriceList = $_SESSION['item-price'];
-}
 
 // foreach($itemNameList as $key => $value){
 //     echo $key . " => " . $value . " => " . $cart[$key] . "<br/>";
@@ -27,41 +24,37 @@ else {
             
         <div class="box1">
             <div class="box1content">
-        <h1>Your Cart</h1>
-        <table id= "carttable">
-            <tr>
-                <th>Item</th>
-                <th>Item Name</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Total</th>
-            </tr>
-            <?php foreach($itemNameList as $key => $value ) { ?>
-            <tr>
-                <td><?php echo $key; ?></td>
-                <td><?php echo $value; ?></td>
-                <td>$ <?php echo $itemPriceList[$key]; ?></td>
-                <td><?php echo $cart[$key];?></td>
-                <td>$ <?php echo  $cart[$key] * $itemPriceList[$key] ;?></td>
-            </tr>
+                <h1>Your Cart</h1>
+                <table id= "carttable">
+                    <tr>
+                        <th>Item</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                    </tr>
+                    <?php foreach($itemNameList as $key => $value ) { ?>
+                    <tr>
+                        <td><?php echo $key; ?></td>
+                        <td><?php echo $value; ?></td>
+                        <td>$ <?php echo $itemPriceList[$key]; ?></td>
+                        <td><?php echo $cart[$key];?></td>
+                        <td>$ <?php echo  $cart[$key] * $itemPriceList[$key] ;?></td>
+                    </tr>
 
-            <?php }?>
+                    <?php }?>
 
-
-
-
-
-            <!-- Add Dummy Data first -->
-            
-        </table> <br>
+                </table> <br>
     
-        <a href="#">
-            <button class="placeorder">Place Order</button>
-        </a>
+                <?php if (isset($cart)) {?>
+                    <a href="processOrder.php">
+                        <button class="placeorder">Place Order</button>
+                    </a>
+                <?php } else { echo "<p>Your Cart is Empty</p>";} ?>
     
-</div> <!-- box1content -->
-</div> <!-- box1 -->
-</div> <!-- wrapper -->
+            </div> <!-- box1content -->
+        </div> <!-- box1 -->
+    </div> <!-- wrapper -->
 <?php include(SHARED_PATH . "/public_footer.php"); ?>
 
 
