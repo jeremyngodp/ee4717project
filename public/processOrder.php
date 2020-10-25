@@ -18,7 +18,6 @@
         $cart = $_SESSION['cart'];
         $itemPrice = $_SESSION['item-price'];
         $total_amount = 0;
-        
         foreach ($cart as $id => $quantity){
             $total_amount += $quantity * $itemPrice[$id];
         }

@@ -65,7 +65,10 @@
 ?>
  
 <?php include( SHARED_PATH . "/public_header.php"); ?>
+<link rel="stylesheet" href="style2.css">
     <div class="wrapper">
+        <div class="box1"> <!-- for whole segment of menu -->
+            <div class="box1content"> <!-- contents within whole segment of menu -->
 
 
 
@@ -76,12 +79,17 @@
         ?>
         <div>
             <?php while($category = $category_list->fetch_assoc()) {
-                echo '<div>';
-                echo '<h2>'. $category["cat_name"] .'</h2>';
+                echo '<div class="category">'; 
+                // category colour to separate contents
+                
+
+
+                echo '<h2>'. $category["cat_name"] .'</h2>'; 
                 $item_list = findDishByCategory($category["id"]);
                 while ($item = $item_list->fetch_assoc()){
-                    echo '<div>';
+                    echo '<div class ="categorycontent">';
                     echo '<h4>' . $item["dish_name"] . '</h4>';
+                    echo '<img src="media/logo.png" alt="Yum Yum Bakery!" class="categoryimage">';
                     echo '<ul>';
                     echo '<li>' . $item["description"] . '</li>';
                     echo "<li>" . $item["price"] . "</li>";
@@ -101,11 +109,14 @@
                     
                     echo '</ul>';
                     echo '</div>';
+        
                 }
                 echo '</div>';
             }
             ?>
-        </div>
+        
+        
+        
 
         <div>
         <?php if(isset($_SESSION['user'])){
@@ -116,8 +127,10 @@
         
         ?>
         </div>
+        </div> <!-- box1 contents -->
 
-    </div>
+        </div> <!-- box 1 -->
+    </div> <!-- wrapper -->
 
 <?php include(SHARED_PATH . "/public_footer.php"); ?>
 
