@@ -2,7 +2,7 @@
     function findDishByCategory($cat_id) {
         global $db;
 
-        $sql = "SELECT * FROM menu WHERE cat_id = " . $cat_id . " and available = 1;" ;
+        $sql = "SELECT * FROM f34ee.menu WHERE cat_id = " . $cat_id . " and available = 1;" ;
         // echo $sql;
         $result = $db->query($sql);
         if (!$result) {
@@ -15,7 +15,7 @@
     function findAllCategory() {
         global $db;
 
-        $sql = "SELECT * FROM category ;";
+        $sql = "SELECT * FROM f34ee.category ;";
         $result = $db->query($sql);
         confirm_result_set($result);
         return $result;
@@ -50,5 +50,4 @@
         }
 
     }
-// INSERT INTO `f34ee`.`order` (`id`, `customer_id`, `amount`, `date`, `status`) VALUES (NULL, '1', '15', CURRENT_TIMESTAMP, '0');
 ?>

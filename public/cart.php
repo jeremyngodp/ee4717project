@@ -25,7 +25,6 @@ if (isset($_SESSION['cart'])) {
         <div class="box1">
             <div class="box1content">
                 <h1>Your Cart</h1>
-
                 <table id= "carttable">
                     <tr>
                         <th>Item</th>
@@ -45,10 +44,8 @@ if (isset($_SESSION['cart'])) {
 
                     <?php }?>
 
-                    <!-- Add Dummy Data first -->
-                    
                 </table> <br>
-                
+    
                 <?php if (isset($cart)) {?>
                     <a href="processOrder.php">
                         <button class="placeorder">Place Order</button>

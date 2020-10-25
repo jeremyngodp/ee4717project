@@ -1,13 +1,12 @@
 <?php 
     require_once("../private/initialize.php"); 
     session_start();
-
-    $order_history =  findAllOrderByUser(1);
+    $order_history =  findAllOrderByUser($id)
 ?>
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>
 
-<div>
+<div class="wrapper">
     <h1>Order History</h1>
     <div>
         <table>
