@@ -13,7 +13,9 @@
     }
 
     function findUserByEmail($email){
-        $sql = 'SELECT id, hashed_password, user_role FROM f34ee.user WHERE email = "' . $email . ";" ;
+        global $db;
+        
+        $sql = 'SELECT * FROM f34ee.user WHERE email = "' . $email . '";' ;
         $result = $db->query($sql);
         if(!$result) {
             echo "User doesn't exist!";
