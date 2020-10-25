@@ -5,7 +5,7 @@
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>
 
-<div>
+<div class="wrapper">
     <h1>Order History</h1>
     <div>
         <table>

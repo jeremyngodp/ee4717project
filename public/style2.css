@@ -1,0 +1,16 @@
+.category {
+      background-color: #EEE2DF;
+
+} /*second container*/
+
+.categorycontent, .category h2{
+	padding: 10px 30px;
+}
+
+.categoryimage {
+	/*margin: 10px 30px;
+	float:right;*/
+
+    width: 230px;
+    height: 230px;
+    }

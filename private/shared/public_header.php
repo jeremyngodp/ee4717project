@@ -9,7 +9,9 @@
     </head>
 
     <body>
+        <div class="wrapper">
         <header>
+        
           <div class="container">
                     
              <a href="index.php"><img src="media/logo.png" alt="Yum Yum Bakery!" class="logo"></a>
@@ -26,5 +28,5 @@
             </nav>
         </div>
     </header>
-   
+    </div>
 </body>
