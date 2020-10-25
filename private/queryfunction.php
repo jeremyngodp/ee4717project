@@ -24,8 +24,7 @@
     function findAllOrderByUser($id) {
         global $db;
 
-        $sql= "SELECT * FROM f34ee.order WHERE customer_id = " . $id . ";" ;
-        // $result = $sql;
+        $sql= "SELECT * FROM f34ee.order WHERE customer_id = " . $id .  ";" ;
         $result = $db->query($sql);
         confirm_result_set($result);
         return $result;
@@ -34,7 +33,7 @@
     function addToOrder($customer_id, $amount) {
         global $db;
 
-        $sql ="INSERT INTO f34ee.order (customer_id, amount) VALUE (" . $customer_id .",". $amount . ");";
+        $sql ="INSERT INTO f34ee.order (customer_id, amount) VALUE (" . $customer_id . ", ". $amount .");";
         if($db->query($sql) === false){
             echo "fail to add order";
         }
@@ -46,7 +45,7 @@
         global $db;
 
         foreach($cart as $key => $value){
-            $sql = "INSERT INTO f34ee.oderitem (order_id, item_id, quantity ) VALUE (" . $order_id ."," . $key ."," . $value." );";
+            $sql = "INSERT INTO f34ee.oderitem (orderid, itemid, quantity ) VALUE (" . $order_id . "," . $key . "," . $value . " );";
             $result = $db->query($sql);
         }
 

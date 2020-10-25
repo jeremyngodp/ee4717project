@@ -12,12 +12,12 @@
         <table>
             <tr>
                 <th>Order ID</th>
-                <th>Items</th>
                 <th>Date Ordered</th>
                 <th>Status</th>
                 <th>Amount</th>
-                <th>More Detail</th>
+                <th>More Details</th>
             </tr>
+            
             <?php while ($order = $order_history->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $order['id']; ?></td>

@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['cart'])) {
     $cart = $_SESSION['cart'];
     $itemNameList =  $_SESSION['item-name'];
-    $itemPriceList = $_SESSION['item-price'];
+    $itemPriceList = $_SESSION['item-price']; 
 }
 
 

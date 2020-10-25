@@ -9,7 +9,7 @@ require_once("../private/initialize.php"); ?>
             <div class="box1content">
                 <h1>Contact Us</h1>
                 <p>Please contact us if you have any feedback or enquiries. We will attend to your request soonest possible, thank you!</p><br>
-
+                
                 <form action="" method="post" id="contactform"> 
                     <label>&ast;Name:</label><input type="text" name="Name"  id="Name" onchange="validateName()" required ><br><br>
                     <label>&ast;Email:</label><input type="text" name="Email"  id="Email"  onchange="validateEmail()" required><br><br>
