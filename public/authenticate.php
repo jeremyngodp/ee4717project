@@ -13,9 +13,8 @@
     }
 
     else {
-        $hashed_password  = password_hash($_POST["Password"], PASSWORD_BCRYPT);
-
-        if ($hashed_password == $user['hashed_password']) {
+        
+        if (password_verify($_POST['Password'], $user['h_password'])) {
             
             $loggedInUser =  array ('id' => $user['id'], 'role' => $user['user_role']);
             
