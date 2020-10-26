@@ -9,11 +9,12 @@
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>
 
-<div>
+<div class="box1">
+            <div class="box1content">
     <?php if(isset($order_history)) {?>
         <h1>Order History</h1>
         <div>
-            <table>
+            <table id="ordertable">
                 <tr>
                     <th>Order ID</th>
                     <th>Date Ordered</th>
@@ -31,13 +32,14 @@
                     <td><a href="#">View More<a></td> 
                 <tr>
                 <?php } ?>
-            <table>
+            </table>
         </div>
         
     <?php } else { ?>
         <h3> You are not logged in yet!</h3>
         <h3><a href="login.php">Login to See Your Order</a></h3>
     <?php } ?>                    
-</div>
+</div> <!-- box1 content -->
+</div> <!-- box1 -->
 
 <?php include(SHARED_PATH . "/public_footer.php"); ?>

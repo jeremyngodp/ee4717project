@@ -1,7 +1,32 @@
+/*fonts*/
+
+@font-face {
+  font-family: Futura;
+  src: url(css/futura.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Futura;
+  src: url(css/futuraitalic.ttf);
+  font-style: italic;
+}
+
+/*shared css across all pages*/
+
 body {
-    font-family:Verdana, Arial, sans-serif;
+    font-family: Futura;
+    font-weight: normal;
     background-color: #EED7C5;
+
     }
+
+h1 {
+    font-family: Futura;
+    font-style: italic;
+    font-weight: bold;
+
+  }
 
 .wrapper{
     width: 80%;
@@ -23,7 +48,9 @@ header {
     } /*photo logo of home*/
 
  .side a {
-        color: black;
+    font-family: Futura;
+
+     color: black;
         text-decoration: none;
         padding: 0px 10px;
         display: inline-block;
@@ -32,6 +59,7 @@ header {
 .side {
         float:right;
         padding: 100px 10px 20px 10px;
+
      } /*side bar push to right*/
 
 .icons {
@@ -52,7 +80,7 @@ header {
         margin:  auto; /* Center the header div horizontally */
     }
 
-/*cart styling*/
+/*cart page styling*/
 
 #carttable{
     border: 0px;
@@ -84,6 +112,41 @@ header {
     height: 30px;
     font-size: 15px;
 }
+
+/*order page styling*/
+
+#ordertable{
+    border: 0px;
+    border-collapse: collapse;
+
+
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
 
 
 
@@ -142,11 +205,75 @@ header {
           margin: 20px;
         } /*terms and conditions */
 
+/*login page*/
+
+#loginform label {
+        float: left;
+        clear: left;
+        display: block;
+        width: 80px;
+        text-align: left;
+        padding-right:30px;
+       } 
+
+#loginform input[type="text"] {
+        display:block;
+        width: 300px;
+        } /*email box*/
+
+#loginform input[type="password"] {
+        display:block;
+        width: 200;
+} /*passwordbox*/
+
+
+#loginform input[type="submit"]{
+         display:block;
+          width: 100px;
+          height: 30px;
+          background-color: #EEE2DF;
+        } /*login button*/
+
+
+/*login new user page*/
+
+#newuserform label {
+        float: left;
+        clear: left;
+        display: block;
+        width: 150px;
+        text-align: left;
+        padding-right:30px;
+       } /*name, email, etc*/
+
+#newuserform input[type="password"] {
+        display:block;
+        width: 200;
+} /*passwordbox*/
+
+#newuserform #Email {
+        display:block;
+        width: 300px;
+        } 
+
+#newuserform #Name #Contact {
+        display:block;
+        width: 200px;
+        } 
+
+#newuserform input[type="submit"]{
+         display:block;
+          width: 100px;
+          height: 30px;
+          background-color: #EEE2DF;
+        } /*login button*/
+
+
 
 /*footer styling*/
 
 footer {
-    font-family:Verdana, Arial, sans-serif;
+    
     background-color: #B36A5E;
     color: #EEE2DF;
     height: 30px;
