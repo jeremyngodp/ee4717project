@@ -50,6 +50,10 @@ if (isset($_SESSION['cart'])) {
                     <a href="processOrder.php">
                         <button class="placeorder">Place Order</button>
                     </a>
+                    <br/>
+                    <a href="emptycart.php">
+                        <button class="placeorder">Empty Cart</button>
+                    </a>
                 <?php } else { echo "<p>Your Cart is Empty</p>";} ?>
     
             </div> <!-- box1content -->

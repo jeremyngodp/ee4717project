@@ -55,10 +55,10 @@
         return $result;
     }
 
-    function addToOrder($customer_id, $amount) {
+    function addToOrder($customer_id, $amount, $date) {
         global $db;
 
-        $sql ="INSERT INTO f34ee.order (customer_id, amount) VALUE (" . $customer_id . ", ". $amount .");";
+        $sql ='INSERT INTO f34ee.order (customer_id, amount, order_date) VALUE (' . $customer_id . ', '. $amount . ', "'. $date .'");';
         if($db->query($sql) === false){
             echo "fail to add order";
         }
