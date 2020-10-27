@@ -12,6 +12,9 @@
 <div>
     <?php if(isset($order_history)) {?>
         <h1>Order History</h1>
+        <?php if ($order_history->num_rows == 0 ) { ?>
+        <h3>You have no order yet. <a href='menu.php'>Order Here !</a></h3>
+        <?php } else { ?>
         <div>
             <table>
                 <tr>
@@ -33,6 +36,7 @@
                 <?php } ?>
             <table>
         </div>
+        <?php } ?>
         
     <?php } else { ?>
         <h3> You are not logged in yet!</h3>

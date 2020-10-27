@@ -7,25 +7,22 @@
     // unset($_SESSION['cart']);
 
     if(isset($_SESSION['user'])){
-        if(!isset($_SESSION['cart'])) {
-            $_SESSION['cart'] = array();
-        }
-        
-        
-    
-        if(!isset($_SESSION['item-name'])) {
-            $_SESSION['item-name'] = array();
-        }
-    
-        if(!isset($_SESSION['item-price'])) {
-            $_SESSION['item-price'] = array();
-        }
-    
         // echo "cart length " . count($_SESSION['cart']) . "<br/>";
         
     
         if (isset($_GET['item']) && isset($_GET["quantity"])) {
-            
+            if(!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = array();
+            }
+
+            if(!isset($_SESSION['item-name'])) {
+                $_SESSION['item-name'] = array();
+            }
+        
+            if(!isset($_SESSION['item-price'])) {
+                $_SESSION['item-price'] = array();
+            }
+
             $item = $_GET['item'];
             $quantity = $_GET['quantity'];
             $name = $_GET['itemName'];
