@@ -62,7 +62,7 @@
 ?>
  
 <?php include( SHARED_PATH . "/public_header.php"); ?>
-<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="css/style2.css">
     <div class="wrapper">
         <div class="box1"> <!-- for whole segment of menu -->
             <div class="box1content"> <!-- contents within whole segment of menu -->

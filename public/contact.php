@@ -4,6 +4,7 @@ require_once("../private/initialize.php"); ?>
 <!DOCTYPE html>
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>
+
     <div class="wrapper">
         <div class="box1">
             <div class="box1content">

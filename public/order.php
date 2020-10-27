@@ -9,14 +9,15 @@
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>
 
-<div>
+<div class="box1">
+            <div class="box1content">
     <?php if(isset($order_history)) {?>
         <h1>Order History</h1>
         <?php if ($order_history->num_rows == 0 ) { ?>
         <h3>You have no order yet. <a href='menu.php'>Order Here !</a></h3>
         <?php } else { ?>
         <div>
-            <table>
+            <table id="ordertable">
                 <tr>
                     <th>Order ID</th>
                     <th>Date Ordered</th>
@@ -34,7 +35,7 @@
                     <td><a href="#">View More<a></td> 
                 <tr>
                 <?php } ?>
-            <table>
+            </table>
         </div>
         <?php } ?>
         
@@ -42,6 +43,7 @@
         <h3> You are not logged in yet!</h3>
         <h3><a href="login.php">Login to See Your Order</a></h3>
     <?php } ?>                    
-</div>
+</div> <!-- box1 content -->
+</div> <!-- box1 -->
 
 <?php include(SHARED_PATH . "/public_footer.php"); ?>
