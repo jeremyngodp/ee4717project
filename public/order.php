@@ -29,7 +29,7 @@
                 <?php while ($order = $order_history->fetch_assoc()) { ?>
                 <tr>
                     <td><?php echo $order['id']; ?></td>
-                    <td><?php echo $order['date']; ?></td>
+                    <td><?php echo $order['order_date']; ?></td>
                     <td><?php echo ($order['status']==1? "fulfilled":"not fullfilled"); ?></td>
                     <td><?php echo $order['amount']; ?></td>
                     <td><a href="#">View More<a></td> 
