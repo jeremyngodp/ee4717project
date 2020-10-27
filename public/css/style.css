@@ -1,0 +1,311 @@
+/*fonts*/
+
+@font-face {
+  font-family: Futura;
+  src: url(futura.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Futura;
+  src: url(futuraitalic.ttf);
+  font-style: italic;
+}
+
+/*shared css across all pages*/
+
+body {
+    font-family: Futura;
+    font-weight: normal;
+    background-color: #EED7C5;
+    font-size: 20px;
+
+    }
+
+h1, h2, h3, h4{
+    font-family: Futura;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+
+.wrapper{
+    width: 80%;
+    margin: auto;
+    min-width: 1200px;
+    } /*fixed page*/
+
+/*header styling*/
+
+header {
+    height: 230px;
+    background-color: #B36A5E; 
+    }
+
+.logo{
+    padding: 0px 30px;
+    width: 230px;
+    height: 230px;
+    } /*photo logo of home*/
+
+ .side a {
+    font-family: Futura;
+
+     color: black;
+        text-decoration: none;
+        padding: 0px 10px;
+        display: inline-block;
+        } /*side bar links*/
+
+.side {
+        float:right;
+        padding: 100px 10px 20px 10px;
+
+     } /*side bar push to right*/
+
+.icons {
+        height: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+            } /*side bar icons*/
+
+.side input[type=text] {
+        border: none;
+        font-size: 15px;
+        height: 20px;
+        margin: 10px;
+            } /*search bar*/
+
+.container{
+        margin:  auto; /* Center the header div horizontally */
+    }
+
+/*cart page styling*/
+
+#carttable{
+    border: 0px;
+    border-collapse: collapse;
+
+
+}
+
+#carttable th:nth-child(odd) { 
+    background-color: #EED7C5;
+    padding: 15px;
+    text-align: center;
+}
+
+#carttable th:nth-child(even){
+    padding: 15px;
+    text-align: center;
+    background-color: #EED7C5;
+}
+
+#carttable td {
+    padding: 15px;
+    text-align: center;
+    background-color: #EEE2DF;
+    }
+
+.placeorder {
+      display:block;
+          width: 150px;
+          height: 50px;
+          font-size: 20px;
+          background-color: #EEE2DF;
+}
+
+/*order page styling*/
+
+#ordertable{
+    border: 0px;
+    border-collapse: collapse;
+
+
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+
+
+
+
+/*content index page*/
+
+.box1 {
+       background-color: #C89F9C;
+    } /*first container*/
+
+.bakeryimage {
+  background-image: url('bakery.jpg');
+  height: 400px;
+  position: relative
+
+}
+
+.box1content {
+        padding: 10px 30px;
+    } /*intro content*/
+
+.imagecontent {
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+        padding: 50px 50px;
+        text-align: center;
+        top: 50%;  
+        transform: translate(0, -50%)
+
+    } /*centered*/
+
+
+#floatright { margin: 10px 30px;
+             float: right;
+     } /*picture in intro */
+
+.box2 {
+      background-color: #EEE2DF;
+
+} /*second container*/
+
+.box2content {
+       padding: 10px 30px;
+        } /*content in second box*/
+
+/*contact form page*/
+
+#contactform label {
+        float: left;
+        clear: left;
+        display: block;
+        width: 120px;
+        text-align: left;
+        padding-right:30px;
+       } /*name, email, etc*/
+
+#contactform input[type="text"], textarea {
+        display:block;
+        width: 300px;
+        } /*text boxes*/
+
+#contactform input[type="checkbox"]{
+        transform: scale(1.5);
+        } /*terms and conditions checkbox*/
+
+#contactform input[type="submit"]{
+         display:block;
+          width: 100px;
+          height: 30px;
+          background-color: #EEE2DF;
+        } /*submit form button*/
+
+#contactform span{
+          margin: 20px;
+        } /*terms and conditions */
+
+/*login page*/
+
+#loginform label {
+        float: left;
+        clear: left;
+        display: block;
+        width: 80px;
+        text-align: left;
+        padding-right:30px;
+       } 
+
+#loginform input[type="text"] {
+        display:block;
+        width: 300px;
+        } /*email box*/
+
+#loginform input[type="password"] {
+        display:block;
+        width: 200;
+} /*passwordbox*/
+
+
+#loginform input[type="submit"]{
+         display:block;
+          width: 100px;
+          height: 30px;
+          background-color: #EEE2DF;
+        } /*login button*/
+
+
+/*login new user page*/
+
+#newuserform label {
+        float: left;
+        clear: left;
+        display: block;
+        width: 150px;
+        text-align: left;
+        padding-right:30px;
+       } /*name, email, etc*/
+
+#newuserform input[type="password"] {
+        display:block;
+        width: 200;
+} /*passwordbox*/
+
+#newuserform #Email {
+        display:block;
+        width: 300px;
+        } 
+
+#newuserform #Name #Contact {
+        display:block;
+        width: 200px;
+        } 
+
+#newuserform input[type="submit"]{
+         display:block;
+          width: 100px;
+          height: 30px;
+          background-color: #EEE2DF;
+        } /*login button*/
+
+
+
+
+
+
+
+
+/*footer styling*/
+
+footer {
+    
+    background-color: #B36A5E;
+    color: #EEE2DF;
+    height: 30px;
+    }
+
+.footertext{
+    text-align: center;
+    padding: 5px;
+    }

@@ -57,4 +57,23 @@ function validateContact() {
 
 }
 
+function validatePassword() {
+
+// Gets reference to password to check if confirmed password is the same 
+
+    var password = document.getElementById("Password").value;
+    var checkpassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    
+
+    if (checkpassword.test(password)) {
+        return true;
+    }
+    else {
+        alert("Password must be at least 8 characters long, containing at least 1 number, 1 upper character and 1 lower character!");
+        return false;
+    }
+
+}
+
+
 
