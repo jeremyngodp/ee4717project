@@ -34,7 +34,19 @@
             echo "No information available for this category";
         }
         return $result;
-      }
+    }
+
+    function findDishByCategoryAdmin($cat_id) {
+        global $db;
+
+        $sql = "SELECT * FROM f34ee.menu WHERE cat_id = " . $cat_id . ";" ;
+        // echo $sql;
+        $result = $db->query($sql);
+        if (!$result) {
+            echo "No information available for this category";
+        }
+        return $result;
+    }
     
 
     function findAllCategory() {
@@ -74,5 +86,23 @@
             $result = $db->query($sql);
         }
 
+    }
+
+    function addProductToMenu($name, $category, $description, $price, $available) {
+        global $db;
+
+        $sql = 'INSERT INTO f34ee.menu (dish_name, price, cat_id, dish_description, available) VALUE ("'.$name .'",'
+                                                                                                    .$price . ',' 
+                                                                                                    .$category. ',"' 
+                                                                                                    .$description .'",'  
+                                                                                                    .$available .');' ;
+        return $db->query($sql);
+    }
+
+    function updateItem($id, $name, $description, $price, $available) {
+        global $db;
+
+        $sql = 'UPDATE f34ee.menu SET dish_name = "'. $name. '", dish_description = "' .$description .'", available =' . $available.', price =' . $price .' WHERE id ='.$id .';' ;
+        $db->query($sql);
     }
 ?>
