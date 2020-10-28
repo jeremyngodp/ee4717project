@@ -4,17 +4,16 @@
 
     <?php include( SHARED_PATH . "/public_header.php"); ?>
     <div class="wrapper">
-        <div class="box1">
-            <div class="box1content">
-                <img src="media/bakery.jpg" height="200px" id="floatright">
+        <div class="bakeryimage">
+            <div class="imagecontent">
             <h1>Welcome to Yum Yum Bakery!</h1>
             
             <p>Hello, we are Yum Yum Bakery, a small bakery launched in 2020. </p>
-            <h3>What We Cater</h3>
+            <h2>What We Cater</h2>
             <p>We have a selection of fresh pastries and baked goods, ranging from iced cookies and afternoon tea to birthday and anniversary cakes, perfect for any celebration and party.</p><br>
 
-            </div> <!-- box1content -->
-        </div> <!-- box1 -->
+            </div> <!-- imagecontent -->
+        </div> <!-- bakeryimage -->
 
         <div class="box2">
             <div class="box2content">
