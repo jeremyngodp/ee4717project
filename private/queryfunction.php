@@ -70,7 +70,7 @@
         global $db;
 
         foreach($cart as $key => $value){
-            $sql = "INSERT INTO f34ee.oderitem (orderid, itemid, quantity ) VALUE (" . $order_id . "," . $key . "," . $value . " );";
+            $sql = "INSERT INTO f34ee.orderitem (orderid, itemid, quantity ) VALUE (" . $order_id . "," . $key . "," . $value . " );";
             $result = $db->query($sql);
         }
 

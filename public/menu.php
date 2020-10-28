@@ -87,7 +87,7 @@
                     
                     echo '<div class ="column">';
                     echo '<h4>' . $item["dish_name"] . '</h4>';
-                    echo '<img src="media/logo.png" alt="Yum Yum Bakery!" class="categoryimage" id="center">';
+                    echo '<img src="menu photos/' . $item['id'] .'.jpg" alt="Yum Yum Bakery!" class="categoryimage" id="center">';
 
                     echo '<table>';
                     echo '<tr>';

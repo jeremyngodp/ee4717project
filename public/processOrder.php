@@ -29,7 +29,9 @@
     
     
             $order_id = addToOrder($user['id'], $total_amount, $currentdate); //Will extract user_id from session place here
-            addToOrderItem($order_id, $cart);
+            if($order_id != null) {
+                addToOrderItem($order_id, $cart);
+            }
     
             unset($_SESSION['cart']);
             unset($_SESSION ['item-name']);
