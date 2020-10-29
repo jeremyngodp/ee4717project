@@ -58,6 +58,15 @@
         return $result;
     }
 
+    function findAllOrder() {
+        global $db;
+
+        $sql= "SELECT * FROM f34ee.order;" ;
+        $result = $db->query($sql);
+        confirm_result_set($result);
+        return $result;
+    }
+
     function findAllOrderByUser($id) {
         global $db;
 
@@ -65,6 +74,17 @@
         $result = $db->query($sql);
         confirm_result_set($result);
         return $result;
+    }
+
+    function findItemByOrderId ($id) {
+        global $db;
+
+        $sql = "SELECT dish_name, price, quantity, itemid
+        FROM menu
+        JOIN orderitem ON menu.id = orderitem.itemid
+        WHERE orderid =" . $id ;
+
+        return $db->query($sql);
     }
 
     function addToOrder($customer_id, $amount, $date) {
@@ -105,4 +125,47 @@
         $sql = 'UPDATE f34ee.menu SET dish_name = "'. $name. '", dish_description = "' .$description .'", available =' . $available.', price =' . $price .' WHERE id ='.$id .';' ;
         $db->query($sql);
     }
+
+    function saleByItem() {
+        global $db;
+
+        $sql = "SELECT itemid, dish_name, SUM(quantity) AS amount_sold, price
+                FROM f34ee.orderitem JOIN f34ee.menu on orderitem.itemid = menu.id
+                GROUP BY itemid
+                ORDER BY amount_sold DESC;" ;
+        
+        return $db->query($sql);
+    }
+
+
+    function saleByItemAndPeriod($start, $end) {
+        global $db;
+
+        $sql = 'SELECT itemid, dish_name, price, qty
+        FROM (
+        
+        SELECT itemid, SUM( quantity ) AS qty
+        FROM (
+        
+        SELECT *
+        FROM f34ee.order
+        WHERE order_date >= "'. $start . '"
+        AND order_date <= "' . $end .'"
+        ) AS Table1
+        JOIN f34ee.orderitem ON Table1.id = orderitem.orderid
+        GROUP BY itemid
+        ) AS table2
+        JOIN f34ee.menu ON menu.id = table2.itemid;';
+        
+        $result =  $db->query($sql);
+        echo ($db -> error );
+        confirm_result_Set($result);
+        
+
+        return $result;
+    }
+
 ?>
+
+
+
