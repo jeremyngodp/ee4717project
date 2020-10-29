@@ -1,5 +1,9 @@
 <?php require_once("../private/initialize.php"); 
     session_start();
+    if (isset($_SESSION['user'])){
+        redirect_to('menu.php');
+    }
+
     $email = $_POST['Email'];
     $password = $_POST['Password'];
     $c_password = $_POST['CPassword'];

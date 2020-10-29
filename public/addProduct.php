@@ -1,5 +1,9 @@
 
-<?php require_once("../private/initialize.php"); 
+<?php require_once("../private/initialize.php");
+    
+    if (isset($_SESSION['user']) || $_SESSION['user']['role'] != 1) {
+        redirect_to('index.php');
+    }
     if($_SERVER['REQUEST_METHOD'] == POST) {
         if (!isset($_POST['name']) || !isset($_POST['category']) || !isset($_POST['price']) || !isset($_POST['description']) || !isset($_POST['available'])){
             redirect_to('addProduct.php');

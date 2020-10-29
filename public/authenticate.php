@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_SESSION['user'])){
-        unsset($_SESSION['user']);
+        redirect_to('menu.php');
     }
 
     $user = findUserByEmail($_POST['Email']) -> fetch_assoc();
