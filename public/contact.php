@@ -1,5 +1,8 @@
 <?php 
-require_once("../private/initialize.php"); ?>
+require_once("../private/initialize.php"); 
+session_start();
+?>
+
 
 <!DOCTYPE html>
 
