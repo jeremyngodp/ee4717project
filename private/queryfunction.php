@@ -165,6 +165,15 @@
         return $result;
     }
 
+    function findAllContact() {
+        global $db;
+
+        $sql= "SELECT * FROM f34ee.contact;" ;
+        $result = $db->query($sql);
+        confirm_result_set($result);
+        return $result;
+    }
+
 ?>
 
 

@@ -14,30 +14,40 @@ h4 {
   padding: 10px;
 }
 
+
+
+
 th {
   height: 200px;
-  padding: 30px;
+  padding: 30px 50px 0px 50px;
   vertical-align: text-top;
+  text-align: center; 
   
 }
 
 td {
   padding: 0px 65px;
+  text-align: center;
 
 }
 
-p{
+.box1content p{
   font-weight: bold;
+  font-size: 30px;
+  padding: 0px 50px;
+}
+
+.adminform  {
+      padding: 0px 50px;
 }
 
 .categoryimage {
-  /*margin: 10px 30px;
-  float:right;*/
 
-    width: 230px;
-    height: 230px;
 
-    }
+    width: 250px;
+    height: 250px;
+
+}
 
  .column {
   float: left;
@@ -60,15 +70,28 @@ p{
 
 input[type="submit"] {
  display:block;
-          width: 100px;
-          height: 30px;
+          width: 200px;
+          height: 50px;
+          font-size: 20px;
           background-color: #C89F9C;
 }
+
+label {
+  float: left;
+        clear: left;
+        display: block;
+        width: 100px;
+        text-align: left;
+        padding-right:30px;
+
+}
+
+
 
 button {
   margin: 20px 0px;
   display:block;
-          width: 150px;
+          width: 250px;
           height: 50px;
           font-size: 20px;
           background-color: #EEE2DF;

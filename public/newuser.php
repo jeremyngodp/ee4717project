@@ -11,6 +11,8 @@
     $contact = $_POST['Contact'];
 
     if($password != $c_password) {
+
+        // how to alert a message that passwords do not match?
         redirect_to('register.php');
     }
 
@@ -18,6 +20,7 @@
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $new_userID = addUser($email,$hashed_password, $fullname, $contact, 0);
         if(!$new_userID){
+            // echo '<script>alert("An error has occurred. Please sign up again!")</script>';
             redirect_to('register.php'); 
         } else {
             $new_user = ['id' => $new_userID, 'role' => 'USER'];

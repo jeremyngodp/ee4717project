@@ -132,12 +132,13 @@
 
                             else if ($_SESSION['user']['role'] == 1) {
                                 echo '<p>Edit</p>';
-                                echo '<form method="post" action="edititem.php">';
-                                echo '<table>';
-                                echo '<tr>';
+                                echo '<form method="post" class ="adminform" action="edititem.php">';
+                                // echo '<table>';
+                                // echo '<tr>';
                                 echo '<input value=' . $item["id"] . ' name="item" type="hidden"> <br/>';
-                                echo '<label>Availability:</label>
-                                    <select name="availability" >';
+                                echo '<label>Availability: </label>
+                                    <select name="availability">';
+
                                     if($item['available']){
                                         echo '
                                         <option value="1" selected="selected">Available</option>
@@ -151,12 +152,12 @@
                                     }
                                     
                                     echo '</select> <br>';
-                                echo '<label>Name:</label><input value="' . $item["dish_name"] . '" name="itemName" type="text"> <br/>';
-                                echo '<label>Description:</label><input value="' . $item["dish_description"] . '" name="description" type="textarea"> <br/>';
-                                echo '<label>Price ($):</label><input value="' . $item["price"] . '" name="itemPrice" type="text"> <br/>';
+                                echo '<label>Name: </label><input value="' . $item["dish_name"] . '" name="itemName" type="text"> <br/>';
+                                echo '<label>Description: </label><input value="' . $item["dish_description"] . '" name="description" type="textarea"> <br/>';
+                                echo '<label>Price ($): </label><input value="' . $item["price"] . '" name="itemPrice" type="text"> <br> <br>';
                                 
-                                echo '</tr>';
-                                echo '</table>';
+                                // echo '</tr>';
+                                // echo '</table>';
                                 echo '<input value="Confirm Change"  type="submit" id="center">';   
                                 echo '<br><br></form>';
 

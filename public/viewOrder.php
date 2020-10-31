@@ -14,8 +14,11 @@
     <div class="wrapper">
         <div class="box1">
             <div class="box1content">
+
+                <h1>View Existing Orders</h1>
+
                 <?php if ($allOrders->num_rows == 0 ) { ?>
-                    <h3>There has not been any order</h3>
+                    <h3>No orders places yet</h3>
                 <?php } else { ?>
                 <div>
                     <table id="ordertable">

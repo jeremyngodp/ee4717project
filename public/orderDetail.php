@@ -26,8 +26,9 @@
                 }
 
                 else {
-                    echo '<h2>Order Id:' . $_GET['order_id'] .'</h2>';
-                    echo '<table>';
+                    echo '<h2>Order Id: '. $_GET['order_id'] .'</h2>';
+                  
+                    echo '<table id="ordertable">';
                     echo '<tr>';
                     echo '<th>Item ID</th>';
                     echo '<th>Item Name</th>';
@@ -48,13 +49,15 @@
 
                         echo '</table>';
 
-                        echo "<h4>Total Amount: $" . $sum . "</h4>";  
+                        echo "<h4>Total Amount: $" . $sum . "</h4>";
+                        
                     } ?>
 
+
                     <?php if ($_SESSION['user']['role'] == 0) {?>
-                        <a href="order.php"><button>Back to Order List</button></a>
+                        <a href="order.php"><button class="placeorder">Back to Order List</button></a>
                     <?php } else if($_SESSION['user']['role'] == 1) { ?>
-                        <a href="viewOrder.php"><button>Back to Order List</button></a>
+                        <a href="viewOrder.php"><button class="placeorder">Back to Order List</button></a>
                     <?php }?>
 
             </div> <!-- box1 contents -->

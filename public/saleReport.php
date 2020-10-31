@@ -17,7 +17,7 @@
                     <h3>Sale By Item</h3>
                     <?php 
                         $saleByItem = saleByItem();
-                        echo '<table>';
+                        echo '<table id="ordertable">';
                         echo '<tr>';
                         echo '<th>Item ID</th>';
                         echo '<th>Item Name</th>';
@@ -41,7 +41,7 @@
 
                 <div>
                     <h3>Sale By Item In Period</h3>
-                    <form action="saleReport.php" method="post">
+                    <form action="saleReport.php" method="post" id="salesreport">
                         <label>Start (inclusive): </lable><input type="date" value="" name="start"><br/>
                         <label>End (inclusive): </lable><input type="date" value="" name="end"> <br/> 
                         <input type="submit" value="Search Period">
@@ -52,7 +52,7 @@
                         }
 
                         else {
-                            echo '<table>';
+                            echo '<table id="searchtable">';
                             echo '<tr>';
                             echo '<th>Item ID</th>';
                             echo '<th>Item Name</th>';

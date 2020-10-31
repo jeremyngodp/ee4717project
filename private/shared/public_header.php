@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        
+        <div class="wrapper">
         <header>
             <div class="container">
                     
@@ -39,5 +39,6 @@
                   
                 </nav>
             </div>
+
         </header>
-   
+   </div>

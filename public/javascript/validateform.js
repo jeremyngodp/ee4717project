@@ -59,7 +59,7 @@ function validateContact() {
 
 function validatePassword() {
 
-// Gets reference to password to check if confirmed password is the same 
+// Gets reference to password to validate it
 
     var password = document.getElementById("Password").value;
     var checkpassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
@@ -71,6 +71,26 @@ function validatePassword() {
     else {
         alert("Password must be at least 8 characters long, containing at least 1 number, 1 upper character and 1 lower character!");
         return false;
+    }
+
+}
+
+
+function confirmPassword() {
+
+// Gets reference to password to check if confirmed password is the same 
+
+    var password = document.getElementById("Password").value;
+    var checkpassword = document.getElementById("CPassword").value;
+    
+
+    if (password!=checkpassword) {
+        alert("The passwords are not the same. Please enter the same password in both fields.");
+        return false;
+        
+    }
+    else {
+        return true;
     }
 
 }
