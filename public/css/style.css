@@ -26,11 +26,12 @@ h1, h2, h3, h4{
     font-family: Futura;
     font-style: italic;
     font-weight: bold;
+    padding: 10px 20px;
   }
 
 
 .wrapper{
-    width: 80%;
+    width: 100%;
     margin: auto;
     min-width: 1200px;
     } /*fixed page*/
@@ -86,20 +87,22 @@ header {
 #carttable{
     border: 0px;
     border-collapse: collapse;
+    margin: 20px;
+}
 
-
+#carttable th {
+  padding: 15px;
+    text-align: center;
+    font-weight: bold;
 }
 
 #carttable th:nth-child(odd) { 
     background-color: #EED7C5;
-    padding: 15px;
-    text-align: center;
 }
 
 #carttable th:nth-child(even){
-    padding: 15px;
-    text-align: center;
-    background-color: #EED7C5;
+
+    background-color: #F6F3E7;
 }
 
 #carttable td {
@@ -110,10 +113,11 @@ header {
 
 .placeorder {
       display:block;
-          width: 150px;
+          width: 200px;
           height: 50px;
           font-size: 20px;
           background-color: #EEE2DF;
+          margin: 20px;
 }
 
 /*order page styling*/
@@ -121,37 +125,30 @@ header {
 #ordertable{
     border: 0px;
     border-collapse: collapse;
-
+    margin: 20px;
 
 }
 
-/* The message box is shown when the user clicks on the password field */
-#message {
-  display:none;
-  background: #f1f1f1;
-  color: #000;
-  position: relative;
-  padding: 20px;
-  margin-top: 10px;
+#ordertable th {
+  padding: 15px;
+    text-align: center;
+    font-weight: bold;
 }
 
-#message p {
-  padding: 10px 35px;
-  font-size: 18px;
+#ordertable th:nth-child(odd) { 
+    background-color: #EED7C5;
 }
 
-/* Add a green text color and a checkmark when the requirements are right */
-.valid {
-  color: green;
+#ordertable th:nth-child(even){
+
+    background-color: #F6F3E7;
 }
 
-/* Add a red text color and an "x" icon when the requirements are wrong */
-.invalid {
-  color: red;
-}
-
-
-
+#ordertable td {
+    padding: 15px;
+    text-align: center;
+    background-color: #EEE2DF;
+    }
 
 
 /*content index page*/
@@ -168,16 +165,21 @@ header {
 }
 
 .box1content {
-        padding: 10px 30px;
+        padding: 20px 40px;
     } /*intro content*/
+
+
+.box1content p {
+  padding: 0px 20px;
+}
 
 .imagecontent {
   background: rgba(255, 255, 255, 0.5);
   position: absolute;
-        padding: 50px 50px;
+        padding: 27.5px 30px;
         text-align: center;
-        top: 50%;  
-        transform: translate(0, -50%)
+ /*       top: 50%;  
+        transform: translate(0, -50%)*/
 
     } /*centered*/
 
@@ -196,6 +198,10 @@ header {
         } /*content in second box*/
 
 /*contact form page*/
+
+#contactform {
+  padding: 10px 20px;
+}
 
 #contactform label {
         float: left;
@@ -217,8 +223,9 @@ header {
 
 #contactform input[type="submit"]{
          display:block;
-          width: 100px;
-          height: 30px;
+          width: 150px;
+          height: 50px;
+          font-size: 20px;
           background-color: #EEE2DF;
         } /*submit form button*/
 
@@ -227,6 +234,10 @@ header {
         } /*terms and conditions */
 
 /*login page*/
+
+#loginform {
+  padding: 10px 20px;
+}
 
 #loginform label {
         float: left;
@@ -250,53 +261,138 @@ header {
 
 #loginform input[type="submit"]{
          display:block;
-          width: 100px;
-          height: 30px;
+          width: 150px;
+          height: 50px;
+          font-size: 20px;
           background-color: #EEE2DF;
         } /*login button*/
 
 
 /*login new user page*/
 
+#newuserform {
+  padding: 10px 20px;
+}
+
 #newuserform label {
         float: left;
         clear: left;
         display: block;
-        width: 150px;
+        width: 200px;
         text-align: left;
-        padding-right:30px;
+        padding-right:10px;
        } /*name, email, etc*/
 
-#newuserform input[type="password"] {
-        display:block;
-        width: 200;
-} /*passwordbox*/
-
-#newuserform #Email {
+#newuserform #Email, #Name, #Contact, input[type="password"] {
         display:block;
         width: 300px;
         } 
 
-#newuserform #Name #Contact {
-        display:block;
-        width: 200px;
-        } 
-
 #newuserform input[type="submit"]{
          display:block;
-          width: 100px;
-          height: 30px;
+          width: 150px;
+          height: 50px;
+          font-size: 20px;
           background-color: #EEE2DF;
         } /*login button*/
 
+#newuserform input[type="checkbox"]{
+        transform: scale(1.5);
+        padding: 10px;
+        } /*terms and conditions checkbox*/
 
 
+/*salesreport
+
+uses same table formatting as ordertable*/
 
 
+#salesreport {
+  padding: 0px 20px;
+}
 
+#salesreport p {
+  padding-left: 0px;
+}
+
+
+#salesreport input[type="submit"]{
+         display:block;
+          width: 150px;
+          height: 50px;
+          font-size: 20px;
+          background-color: #EEE2DF;
+          margin: 20px 0px;
+        } /*search button*/
+
+#searchtable {
+  border: 0px;
+    border-collapse: collapse;
+
+}
+
+#searchtable th {
+  padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#searchtable th:nth-child(odd) { 
+    background-color: #EED7C5;
+}
+
+#searchtable th:nth-child(even){
+
+    background-color: #F6F3E7;
+}
+
+#searchtable td {
+    padding: 15px;
+    text-align: center;
+    background-color: #EEE2DF;
+    }
 
 
 /*footer styling*/
+
+
+
+/*view message page*/
+
+#messagetable {
+    border: 0px;
+    border-collapse: collapse;
+    margin: 20px;
+
+}
+
+#messagetable th {
+  padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#messagetable th:nth-child(odd) { 
+    background-color: #EED7C5;
+}
+
+#messagetable th:nth-child(even){
+
+    background-color: #F6F3E7;
+}
+
+#messagetable td {
+    padding: 15px;
+    text-align: center;
+    background-color: #EEE2DF;
+    }
+
+#messagetable #message {
+  width: 400px;
+}
+
+
+
 
 footer {
     
