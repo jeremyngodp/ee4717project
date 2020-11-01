@@ -30,7 +30,7 @@ session_start();
           
 
                 <!--Considering Changing the Form to this, as I cant figure a way to email with PHP -->
-                <a href="mailto:ngodatphuc.ce@gmail.com">Or email us!
+                <a href="mailto:yumyumbakery@gmail.com">Or email us!
                </a>
             </div> <!-- box1content -->
         </div> <!-- box1 -->

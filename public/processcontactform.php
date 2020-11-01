@@ -22,13 +22,11 @@ $currentdate = date_format(date_create("Asia/Singapore"),"Y-m-d");
             ('".$name."', '".$email."','".$contactno."','".$message."',  '".$currentdate."')";
  $result = $db->query($query);
 
- //  if (!$result) {
-        
- //      // echo "Your message has been submitted. Please wait for our team to get back to you!";
- //  } else {
-
- //  	  // echo "An error has occurred, please try again!";
- //  }
+  if (!$result) {
+      $_SESSION['message'] = "Your message has been received";
+  } else {
+    $_SESSION['message'] = "Error sending your feedback, please try again later!";
+  }
 
 
  redirect_to('contact.php');

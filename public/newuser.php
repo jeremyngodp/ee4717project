@@ -12,7 +12,7 @@
 
     if($password != $c_password) {
 
-        // how to alert a message that passwords do not match?
+        $_SESSION['message'] ="Password and Confirm Password not matching";
         redirect_to('register.php');
     }
 
@@ -20,7 +20,7 @@
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $new_userID = addUser($email,$hashed_password, $fullname, $contact, 0);
         if(!$new_userID){
-            // echo '<script>alert("An error has occurred. Please sign up again!")</script>';
+            $_SESSION['message'] ="Failed to register New User with email " . $email;
             redirect_to('register.php'); 
         } else {
             $new_user = ['id' => $new_userID, 'role' => 'USER'];

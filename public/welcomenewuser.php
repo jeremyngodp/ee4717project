@@ -1,4 +1,9 @@
-<?php require_once("../private/initialize.php"); ?>
+<?php require_once("../private/initialize.php"); 
+    session_start();
+    if (isset($_SESSION['user'])){
+        redirect_to('menu.php');
+    }
+?>
 
 
 <?php include( SHARED_PATH . "/public_header.php"); ?>

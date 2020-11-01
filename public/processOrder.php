@@ -13,6 +13,7 @@
 
     else {
         if (!isset($_SESSION['cart'])) {
+            $_SESSION['message'] = "Cart is empty";
             $db->close();
             redirect_to('menu.php');
         }
@@ -29,8 +30,13 @@
     
     
             $order_id = addToOrder($user['id'], $total_amount, $currentdate); //Will extract user_id from session place here
-            if($order_id != null) {
+            if($order_id != 0 && $order_id != null) {
                 addToOrderItem($order_id, $cart);
+            }
+
+            else {
+                $_SESSION['message'] = "Failed to Add Order! Please try Again later";
+                redirect_to('cart.php');
             }
     
             unset($_SESSION['cart']);

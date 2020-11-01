@@ -155,7 +155,7 @@
         JOIN f34ee.orderitem ON Table1.id = orderitem.orderid
         GROUP BY itemid
         ) AS table2
-        JOIN f34ee.menu ON menu.id = table2.itemid;';
+        JOIN f34ee.menu ON menu.id = table2.itemid  ORDER BY qty DESC;';
         
         $result =  $db->query($sql);
         echo ($db -> error );
@@ -168,7 +168,7 @@
     function findAllContact() {
         global $db;
 
-        $sql= "SELECT * FROM f34ee.contact;" ;
+        $sql= "SELECT * FROM f34ee.contact ORDER BY currentdate;" ;
         $result = $db->query($sql);
         confirm_result_set($result);
         return $result;
