@@ -52,13 +52,21 @@
                         echo "<h4>Total Amount: $" . $sum . "</h4>";
                         
                     } ?>
-
+                    <?php $result = findOrderStatus($_GET['order_id']) -> fetch_assoc();
+                    
+                    if ($result['order_status'] == 0) { ?>
+                            <a href="completeOrder.php?order_id=<?php echo $_GET['order_id'];?>">
+                                    <button class="placeorder">Complete Order</button>
+                                </a>
+                    <?php } ?>   
 
                     <?php if ($_SESSION['user']['role'] == 0) {?>
                         <a href="order.php"><button class="placeorder">Back to Order List</button></a>
                     <?php } else if($_SESSION['user']['role'] == 1) { ?>
                         <a href="viewOrder.php"><button class="placeorder">Back to Order List</button></a>
                     <?php }?>
+
+                    
 
             </div> <!-- box1 contents -->
         </div> <!-- box 1 -->

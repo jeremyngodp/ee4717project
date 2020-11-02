@@ -174,6 +174,20 @@
         return $result;
     }
 
+    function findOrderStatus($id) {
+        global $db;
+        $sql = "SELECT order_status FROM f34ee.order WHERE id = " . $id .";" ;
+        $result = $db->query($sql);
+
+        return $result;
+    }
+
+    function updateOrderStatus($id) {
+        global $db;
+        $sql = "UPDATE f34ee.order SET order_status = 1 WHERE id =" . $id .";" ;
+        $db->query($sql);
+    }
+
 ?>
 
 

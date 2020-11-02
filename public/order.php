@@ -30,7 +30,7 @@
                 <tr>
                     <td><?php echo $order['id']; ?></td>
                     <td><?php echo $order['order_date']; ?></td>
-                    <td><?php echo ($order['status']==1? "fulfilled":"not fullfilled"); ?></td>
+                    <td><?php echo ($order['order_status']==1? "fulfilled":"not fullfilled"); ?></td>
                     <td><?php echo $order['amount']; ?></td>
                     <td><a href=<?php echo '"orderDetail.php?order_id='. $order['id'] .'"';?> >View More<a></td> 
                 <tr>
