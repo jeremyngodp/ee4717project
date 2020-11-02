@@ -35,7 +35,7 @@
             }
 
             else {
-                $_SESSION['message'] = "Failed to Add Order! Please try Again later";
+                $_SESSION['errormessage'] = "Failed to Add Order! Please try Again later";
                 redirect_to('cart.php');
             }
     

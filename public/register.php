@@ -21,7 +21,7 @@
             <label>&ast;Contact No:</label><input type="text" name="Contact"  id="Contact"  onchange="validateContact()" required><br><br>
             <label>&ast;Password: </label><input type="password" name="Password" id="Password" rows="4" cols="40" onchange="validatePassword()" required ></input> <br>
 
-                    <div id="message">
+    <div id="passwordmessage">
   <h3>Password must contain the following:</h3>
   <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
   <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>

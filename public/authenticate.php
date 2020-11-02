@@ -8,7 +8,7 @@
 
     $user = findUserByEmail($_POST['Email']) -> fetch_assoc();
     if (!isset($user)) {
-        $_SESSION['message'] = "User Not Found";
+        $_SESSION['errormessage'] = "User Not Found. Please sign up for a new account!";
         redirect_to("login.php");
     }
 
@@ -24,7 +24,7 @@
         }
 
         else {
-            $_SESSION['message'] = "Login Failed";
+            $_SESSION['errormessage'] = "Login Failed. Please enter the correct password!";
             redirect_to('login.php');
         }
     }

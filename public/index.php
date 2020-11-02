@@ -6,10 +6,9 @@
 
     <?php include( SHARED_PATH . "/public_header.php"); ?>
     <div class="wrapper">
-        <div class="bakeryimage">
+        <div class="backgroundimage">
             <div class="imagecontent">
             <h1>Welcome to Yum Yum Bakery!</h1>
-            
             <p>Hello, we are Yum Yum Bakery, a small bakery launched in 2020. </p>
             <h2>What We Cater</h2>
             <p>We have a selection of fresh pastries and baked goods, ranging from iced cookies and afternoon tea to birthday and anniversary cakes, perfect for any celebration and party.</p><br>
@@ -19,23 +18,29 @@
 
         <div class="box2">
             <div class="box2content">
-                <h2> How to Order </h2>
+                <h2>Navigation</h2>
+                <div class="indexcolumn">
+                <a href="menu.php"><img src="css/cake.png" alt="Cake" id="center"></a>
+                <h3>One</h3>
+                <p>
+                Head to our ever-changing menu and add the dessert you would like to order to your cart.</p></div>
+
+                <div class="indexcolumn">
+                <a href="cart.php"><img src="css/cart.png" alt="Cart" id="center"></a>
+                <h3>Two</h3>
+                <p>Proceed to your cart and double confirm your list before submission of order.</p></div>
+
+                <div class="indexcolumn">
+                <a href="contact.php"><img src="css/happy.png" alt="Happy" id="center"></a>
+                <h3>Three</h3>
+                <p>Our team will process your order and email you once it is confirmed. Otherwise, you can also contact us for any enquiries!</p></div>
                 
-                <dl>
-                    <dt>One</dt>
-                    <dd>Head to the menu icon and add the item you would like to order to your cart.</p>
-                    <dt>Two</dt>
-                    <dd>Proceed to your cart and double confirm your list before submission of order.</p>
-                    <dt>Three</dt>
-                    <dd>Our team will process your order and email you once it is confirmed.</p>
-                    <dt>Four</dt>
-                    <dd>You may check your order again in the order tab. Please contact us if you have any further enquiries!</p>
-                    <!-- Can add more step if needed -->
-                </dl>
+
+            
                 
                 
             </div> <!-- box2content -->
         </div> <!-- box2 -->
-    </div>
+    </div> <!-- wrapper -->
     
 <?php include(SHARED_PATH . "/public_footer.php"); ?>

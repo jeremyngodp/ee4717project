@@ -12,7 +12,7 @@
 
     if($password != $c_password) {
 
-        $_SESSION['message'] ="Password and Confirm Password not matching";
+        $_SESSION['errormessage'] ="Password and Confirm Password do not match, please try again. Failed to register account.";
         redirect_to('register.php');
     }
 
@@ -20,7 +20,7 @@
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $new_userID = addUser($email,$hashed_password, $fullname, $contact, 0);
         if(!$new_userID){
-            $_SESSION['message'] ="Failed to register New User with email " . $email;
+            $_SESSION['errormessage'] ="Failed to register New User with email. Please try again." . $email;
             redirect_to('register.php'); 
         } else {
             $new_user = ['id' => $new_userID, 'role' => 'USER'];

@@ -60,7 +60,7 @@ header {
 
 .side {
         float:right;
-        padding: 100px 10px 20px 10px;
+        padding: 100px 30px 20px 30px;
 
      } /*side bar push to right*/
 
@@ -157,10 +157,10 @@ header {
        background-color: #C89F9C;
     } /*first container*/
 
-.bakeryimage {
-  background-image: url('bakery.jpg');
-  height: 400px;
-  position: relative
+.backgroundimage {
+  background-image: url('background.jpg');
+  height: 375px;
+  position: relative;
 
 }
 
@@ -173,15 +173,25 @@ header {
   padding: 0px 20px;
 }
 
+a#loginstart{
+  padding: 0px 20px;
+}
+
 .imagecontent {
   background: rgba(255, 255, 255, 0.5);
   position: absolute;
-        padding: 27.5px 30px;
+        padding: 15px 30px;
         text-align: center;
  /*       top: 50%;  
         transform: translate(0, -50%)*/
 
     } /*centered*/
+
+#center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 
 #floatright { margin: 10px 30px;
@@ -196,6 +206,36 @@ header {
 .box2content {
        padding: 10px 30px;
         } /*content in second box*/
+
+.indexcolumn {
+  float: left;
+  width: 33.33%;
+
+}
+
+.indexcolumn p{
+  padding: 0px 60px;
+  text-align: center;
+}
+
+.indexcolumn h3{
+  text-align: center;
+}
+
+.box2content h2{
+  text-align: center;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.box2content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
 
 /*contact form page*/
 
@@ -268,7 +308,7 @@ header {
         } /*login button*/
 
 
-/*login new user page*/
+/*register page*/
 
 #newuserform {
   padding: 10px 20px;
@@ -300,6 +340,14 @@ header {
         transform: scale(1.5);
         padding: 10px;
         } /*terms and conditions checkbox*/
+
+
+div#errormessage {
+  padding: 20px 60px;
+  font-size: 22px;
+  color: red;
+}
+
 
 
 /*salesreport

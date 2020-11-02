@@ -1,3 +1,4 @@
+
 <?php
 function redirect_to($location) {
     header("Location: " . $location);
@@ -20,9 +21,9 @@ function display_errors($errors=array()) {
 }
 
 function get_and_clear_session_message() {
-    if(isset($_SESSION['message']) && $_SESSION['message'] != '') {
-        $msg = $_SESSION['message'];
-        unset($_SESSION['message']);
+    if(isset($_SESSION['errormessage']) && $_SESSION['errormessage'] != '') {
+        $msg = $_SESSION['errormessage'];
+        unset($_SESSION['errormessage']);
         return $msg;
     }
 }
@@ -30,7 +31,7 @@ function get_and_clear_session_message() {
 function display_session_message() {
     $msg = get_and_clear_session_message();
     
-    return '<div id="message">' . $msg . '</div>';
+    return '<div id="errormessage">' . $msg . '</div>';
     
 }
 ?>

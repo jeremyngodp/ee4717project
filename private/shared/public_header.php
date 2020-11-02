@@ -33,9 +33,10 @@
                             else {
                                 echo '<a href="logout.php"><img src="media/user.png" alt="user" class="icons"><br>Log Out</a>';
                             }
-                        ?>    
+                        ?>
+                       
 
-                        <input type="text" placeholder="Search..."> <!-- TODO: Insert search box -->
+                       <!--  <input type="text" placeholder="Search...">  TODO: Insert search box --> 
                     
                     </nav>
                 </div>
