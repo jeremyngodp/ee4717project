@@ -7,27 +7,47 @@
     session_start();
 
     if (!isset($_SESSION['user'])) {
+        $db->close();
         redirect_to('login.php');
     }
 
-    if (!isset($_SESSION['cart'])) {
-        redirect_to('menu.php');
-    }
-
-    else{
-        $cart = $_SESSION['cart'];
-        $itemPrice = $_SESSION['item-price'];
-        $total_amount = 0;
-        foreach ($cart as $id => $quantity){
-            $total_amount += $quantity * $itemPrice[$id];
+    else {
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['message'] = "Cart is empty";
+            $db->close();
+            redirect_to('menu.php');
         }
+    
+        else{
+            $user = $_SESSION['user'];
+            $currentdate = date_format(date_create("Asia/Singapore"),"Y-m-d");
+            $cart = $_SESSION['cart'];
+            $itemPrice = $_SESSION['item-price'];
+            $total_amount = 0;
+            foreach ($cart as $id => $quantity){
+                $total_amount += $quantity * $itemPrice[$id];
+            }
+    
+    
+            $order_id = addToOrder($user['id'], $total_amount, $currentdate); //Will extract user_id from session place here
+            if($order_id != 0 && $order_id != null) {
+                addToOrderItem($order_id, $cart);
+            }
 
-        $order_id = addToOrder(1, $total_amount); //Will extract user_id from session place here
-        addToOrderItem($order_id, $cart);
-
-        unset($_SESSION['cart']);
-        redirect_to('order.php');
+            else {
+                $_SESSION['errormessage'] = "Failed to Add Order! Please try Again later";
+                redirect_to('cart.php');
+            }
+    
+            unset($_SESSION['cart']);
+            unset($_SESSION ['item-name']);
+            unset($_SESSION ['item-price']);
+            $db->close();
+    
+            redirect_to('order.php');
+        }
     }
+    
 
-    $db->close();
+    
 ?>

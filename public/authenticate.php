@@ -3,12 +3,12 @@
     session_start();
 
     if (isset($_SESSION['user'])){
-        unsset($_SESSION['user']);
+        redirect_to('menu.php');
     }
 
     $user = findUserByEmail($_POST['Email']) -> fetch_assoc();
     if (!isset($user)) {
-        echo "<p>User not found!</p>";
+        $_SESSION['errormessage'] = "User Not Found. Please sign up for a new account!";
         redirect_to("login.php");
     }
 
@@ -24,7 +24,7 @@
         }
 
         else {
-            echo "<p>Login failed</p>";
+            $_SESSION['errormessage'] = "Login Failed. Please enter the correct password!";
             redirect_to('login.php');
         }
     }

@@ -1,0 +1,99 @@
+.category {
+      background-color: #EEE2DF;
+
+} /*second container*/
+
+
+h2 {
+  
+  padding: 50px 0px 0px 50px;
+}
+
+h4 {
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+
+th {
+  height: 200px;
+  padding: 30px 50px 0px 50px;
+  vertical-align: text-top;
+  text-align: center; 
+  
+}
+
+td {
+  padding: 0px 65px;
+  text-align: center;
+
+}
+
+.box1content p{
+  font-weight: bold;
+  font-size: 30px;
+  padding: 0px 50px;
+}
+
+.adminform  {
+      padding: 0px 50px;
+}
+
+.categoryimage {
+
+
+    width: 250px;
+    height: 250px;
+
+}
+
+ .column {
+  float: left;
+  width: 33.33%;
+
+}
+
+/* Clear floats after the columns */
+.category:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+input[type="submit"] {
+ display:block;
+          width: 200px;
+          height: 50px;
+          font-size: 20px;
+          background-color: #C89F9C;
+}
+
+label {
+  float: left;
+        clear: left;
+        display: block;
+        width: 100px;
+        text-align: left;
+        padding-right:30px;
+
+}
+
+
+
+button {
+  margin: 20px 0px;
+  display:block;
+          width: 250px;
+          height: 50px;
+          font-size: 20px;
+          background-color: #EEE2DF;
+
+}

@@ -34,13 +34,34 @@
             echo "No information available for this category";
         }
         return $result;
-      }
+    }
+
+    function findDishByCategoryAdmin($cat_id) {
+        global $db;
+
+        $sql = "SELECT * FROM f34ee.menu WHERE cat_id = " . $cat_id . ";" ;
+        // echo $sql;
+        $result = $db->query($sql);
+        if (!$result) {
+            echo "No information available for this category";
+        }
+        return $result;
+    }
     
 
     function findAllCategory() {
         global $db;
 
         $sql = "SELECT * FROM f34ee.category ;";
+        $result = $db->query($sql);
+        confirm_result_set($result);
+        return $result;
+    }
+
+    function findAllOrder() {
+        global $db;
+
+        $sql= "SELECT * FROM f34ee.order;" ;
         $result = $db->query($sql);
         confirm_result_set($result);
         return $result;
@@ -55,10 +76,21 @@
         return $result;
     }
 
-    function addToOrder($customer_id, $amount) {
+    function findItemByOrderId ($id) {
         global $db;
 
-        $sql ="INSERT INTO f34ee.order (customer_id, amount) VALUE (" . $customer_id . ", ". $amount .");";
+        $sql = "SELECT dish_name, price, quantity, itemid
+        FROM menu
+        JOIN orderitem ON menu.id = orderitem.itemid
+        WHERE orderid =" . $id ;
+
+        return $db->query($sql);
+    }
+
+    function addToOrder($customer_id, $amount, $date) {
+        global $db;
+
+        $sql ='INSERT INTO f34ee.order (customer_id, amount, order_date) VALUE (' . $customer_id . ', '. $amount . ', "'. $date .'");';
         if($db->query($sql) === false){
             echo "fail to add order";
         }
@@ -70,9 +102,93 @@
         global $db;
 
         foreach($cart as $key => $value){
-            $sql = "INSERT INTO f34ee.oderitem (orderid, itemid, quantity ) VALUE (" . $order_id . "," . $key . "," . $value . " );";
+            $sql = "INSERT INTO f34ee.orderitem (orderid, itemid, quantity ) VALUE (" . $order_id . "," . $key . "," . $value . " );";
             $result = $db->query($sql);
         }
 
     }
+
+    function addProductToMenu($name, $category, $description, $price, $available) {
+        global $db;
+
+        $sql = 'INSERT INTO f34ee.menu (dish_name, price, cat_id, dish_description, available) VALUE ("'.$name .'",'
+                                                                                                    .$price . ',' 
+                                                                                                    .$category. ',"' 
+                                                                                                    .$description .'",'  
+                                                                                                    .$available .');' ;
+        return $db->query($sql);
+    }
+
+    function updateItem($id, $name, $description, $price, $available) {
+        global $db;
+
+        $sql = 'UPDATE f34ee.menu SET dish_name = "'. $name. '", dish_description = "' .$description .'", available =' . $available.', price =' . $price .' WHERE id ='.$id .';' ;
+        $db->query($sql);
+    }
+
+    function saleByItem() {
+        global $db;
+
+        $sql = "SELECT itemid, dish_name, SUM(quantity) AS amount_sold, price
+                FROM f34ee.orderitem JOIN f34ee.menu on orderitem.itemid = menu.id
+                GROUP BY itemid
+                ORDER BY amount_sold DESC;" ;
+        
+        return $db->query($sql);
+    }
+
+
+    function saleByItemAndPeriod($start, $end) {
+        global $db;
+
+        $sql = 'SELECT itemid, dish_name, price, qty
+        FROM (
+        
+        SELECT itemid, SUM( quantity ) AS qty
+        FROM (
+        
+        SELECT *
+        FROM f34ee.order
+        WHERE order_date >= "'. $start . '"
+        AND order_date <= "' . $end .'"
+        ) AS Table1
+        JOIN f34ee.orderitem ON Table1.id = orderitem.orderid
+        GROUP BY itemid
+        ) AS table2
+        JOIN f34ee.menu ON menu.id = table2.itemid  ORDER BY qty DESC;';
+        
+        $result =  $db->query($sql);
+        echo ($db -> error );
+        confirm_result_Set($result);
+        
+
+        return $result;
+    }
+
+    function findAllContact() {
+        global $db;
+
+        $sql= "SELECT * FROM f34ee.contact ORDER BY currentdate;" ;
+        $result = $db->query($sql);
+        confirm_result_set($result);
+        return $result;
+    }
+
+    function findOrderStatus($id) {
+        global $db;
+        $sql = "SELECT order_status FROM f34ee.order WHERE id = " . $id .";" ;
+        $result = $db->query($sql);
+
+        return $result;
+    }
+
+    function updateOrderStatus($id) {
+        global $db;
+        $sql = "UPDATE f34ee.order SET order_status = 1 WHERE id =" . $id .";" ;
+        $db->query($sql);
+    }
+
 ?>
+
+
+
