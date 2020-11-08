@@ -47,11 +47,17 @@
                         <input type="submit" value="Search Period">
                     </form>
                     <?php
+                        if($_POST['end'] && $_POST['start']) {
+                            echo "<p> From " . $_POST['start'] . " To " . $_POST['end'] ."</p>";
+                        }
+                        
                         if($result->num_rows == 0) {
                             echo '<p>No sale report for this period</p>';
                         }
 
                         else {
+
+                           
                             echo '<table id="searchtable">';
                             echo '<tr>';
                             echo '<th>Item ID</th>';

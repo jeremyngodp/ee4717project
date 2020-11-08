@@ -54,7 +54,7 @@
                     } ?>
                     <?php $result = findOrderStatus($_GET['order_id']) -> fetch_assoc();
                     
-                    if ($result['order_status'] == 0) { ?>
+                    if ($result['order_status'] == 0 && $_SESSION['user']['role'] == 1) { ?>
                             <a href="completeOrder.php?order_id=<?php echo $_GET['order_id'];?>">
                                     <button class="placeorder">Complete Order</button>
                                 </a>
